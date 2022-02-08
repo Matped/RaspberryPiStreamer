@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "433924369677",
+    "project_id": "taskmaster-26fdd",
+    "storage_bucket": "taskmaster-26fdd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433924369677:android:6478f4b79331ee9a765444",
+        "android_client_info": {
+          "package_name": "com.example.raspberrypistreamer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "433924369677-tvrp5ocpjej5ad9jl2crive752llrvt7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClcEF-So6RJ_9c4Dz6dpqPxiMeyina1YE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "433924369677-tvrp5ocpjej5ad9jl2crive752llrvt7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433924369677:android:5c79e491ae6047f7765444",
+        "android_client_info": {
+          "package_name": "com.example.taskmaster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "433924369677-tvrp5ocpjej5ad9jl2crive752llrvt7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClcEF-So6RJ_9c4Dz6dpqPxiMeyina1YE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "433924369677-tvrp5ocpjej5ad9jl2crive752llrvt7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
