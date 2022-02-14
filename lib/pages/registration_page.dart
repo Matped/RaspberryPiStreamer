@@ -1,6 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:raspberrypistreamer/firebase/firebase_authentication.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:raspberrypistreamer/pages/login_page.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class RegistrationPage extends StatefulWidget {
 class _RegistrationPageState extends State<RegistrationPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final _auth = FirebaseAuth.instance;
 
   @override
   @override
@@ -44,10 +46,40 @@ class _RegistrationPageState extends State<RegistrationPage> {
               ),
             ),
             ElevatedButton(
-              onPressed: () {
-                AuthService().registerWithEmailPassword(email: emailController.text, password: passwordController.text);
+              onPressed: () async {
+                final user = await _auth.createUserWithEmailAndPassword(
+                    email: emailController.text,
+                    password: passwordController.text);
+
+                if (user != null) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginPage()));
+                }
               },
               child: const Text('Register'),
+            ),
+            Center(
+              child: RichText(
+                text: TextSpan(
+                  text: 'Already have an account? ',
+                  children: [
+                    TextSpan(
+                      text: 'Sign in here!',
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginPage(),
+                            ),
+                          );
+                        },
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),

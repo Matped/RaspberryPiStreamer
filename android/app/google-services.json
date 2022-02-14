@@ -7,7 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:433924369677:android:6478f4b79331ee9a765444",
+        "mobilesdk_app_id": "1:433924369677:android:be4e77fe744ac328765444",
         "android_client_info": {
           "package_name": "com.example.raspberrypistreamer"
         }
