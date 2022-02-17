@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+
+import 'package:raspberrypistreamer/lists/infinite_scrolling_list.dart';
 import 'package:raspberrypistreamer/navbar/bottom_navbar_pages/bottom_nav_deposit_page.dart';
 import 'package:raspberrypistreamer/navbar/bottom_navbar_pages/bottom_nav_home_page.dart';
 import 'package:raspberrypistreamer/navbar/bottom_navbar_pages/bottom_nav_search_page.dart';
@@ -54,6 +57,7 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(
             label: "Home",
             icon: Icon(Icons.home),
+
           ),
           BottomNavigationBarItem(
             label: "Search",
