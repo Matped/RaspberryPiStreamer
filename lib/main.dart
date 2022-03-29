@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:raspberrypistreamer/lists/infinite_scrolling_list.dart';
+
 import 'pages/login_page.dart';
 
 void main() async {
