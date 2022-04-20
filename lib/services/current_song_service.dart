@@ -8,6 +8,6 @@ Future<CurrentSong> fetchCurrentSong() async {
   if (response.statusCode == 200) {
     return CurrentSong.fromJson(jsonDecode(response.body));
   } else {
-    throw Exception('Failed to load current song');
+    throw Exception('Failed to load current song.');
   }
 }
