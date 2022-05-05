@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:raspberrypistreamer/pages/home_page_connected.dart';
 import 'package:raspberrypistreamer/navbar/bottom_navbar_pages/bottom_nav_home_page.dart';
+import 'package:raspberrypistreamer/pages/main_page.dart';
 
 class HomePageNotConnected extends StatefulWidget {
   const HomePageNotConnected({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class _HomePageNotConnectedState extends State<HomePageNotConnected> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const BottomNavHomePage()));
+                            builder: (context) => const MainPage()));
                   },
                   child: const Text('The Bar')),
               ConstrainedBox(
@@ -53,7 +54,7 @@ class _HomePageNotConnectedState extends State<HomePageNotConnected> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const BottomNavHomePage()));
+                          builder: (context) => const MainPage()));
                 },
                 child: const Text('Connect'),
               ),

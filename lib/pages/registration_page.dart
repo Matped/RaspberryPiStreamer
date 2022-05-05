@@ -15,7 +15,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   final passwordController = TextEditingController();
   final _auth = FirebaseAuth.instance;
 
-  @override
+
   @override
   void dispose() {
     emailController.dispose();

@@ -4,6 +4,7 @@ import 'package:raspberrypistreamer/navbar/bottom_navbar_pages/bottom_nav_home_p
 
 import 'package:raspberrypistreamer/models/current_song_model.dart';
 import 'package:raspberrypistreamer/models/queue_model.dart';
+import 'package:raspberrypistreamer/pages/main_page.dart';
 
 import 'package:raspberrypistreamer/services/queue_service.dart';
 import 'package:raspberrypistreamer/services/current_song_service.dart';
@@ -16,15 +17,7 @@ class HomePageConnected extends StatefulWidget {
 }
 
 class _HomePageConnectedState extends State<HomePageConnected> {
-  late Future<List<Queue>>? _queue;
-  late Future<CurrentSong>? _currentSong;
 
-  @override
-  void initState() {
-    super.initState();
-    _queue = fetchCurrentQueue();
-    _currentSong = fetchCurrentSong();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +32,7 @@ class _HomePageConnectedState extends State<HomePageConnected> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const BottomNavHomePage()));
+                          builder: (context) => const MainPage()));
                 },
                 child: const Text('Disconnect')),
             const SizedBox(
@@ -58,8 +51,8 @@ class _HomePageConnectedState extends State<HomePageConnected> {
             const SizedBox(height: 20),
             ConstrainedBox(
               constraints: const BoxConstraints(maxHeight: 250, maxWidth: 500),
-              child: FutureBuilder<List<Queue>>(
-                  future: _queue,
+              child: StreamBuilder<List<Queue>>(
+                  stream: updateQueue(),
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       return ListView.builder(
@@ -92,8 +85,8 @@ class _HomePageConnectedState extends State<HomePageConnected> {
               child: Center(
                 child: Row(
                   children: [
-                    FutureBuilder<CurrentSong>(
-                      future: _currentSong,
+                    StreamBuilder<CurrentSong>(
+                      stream: updateSong(),
                       builder: (context, snapshot) {
                         if (snapshot.hasData) {
                           return Text(

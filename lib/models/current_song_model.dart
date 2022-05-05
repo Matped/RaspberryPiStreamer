@@ -1,10 +1,11 @@
+
 class CurrentSong {
   final String artist;
   final String songName;
   final int duration;
   final int progress;
 
-  const CurrentSong(
+   CurrentSong(
       {required this.artist, required this.songName, required this.duration, required this.progress});
 
   factory CurrentSong.fromJson(Map<String, dynamic> json) {
@@ -14,4 +15,5 @@ class CurrentSong {
         duration: json['duration_ms'],
         progress: json['progress_ms']);
   }
+
 }
