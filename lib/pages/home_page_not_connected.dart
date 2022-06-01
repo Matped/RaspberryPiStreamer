@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:raspberrypistreamer/pages/home_page_connected.dart';
 import 'package:raspberrypistreamer/navbar/bottom_navbar_pages/bottom_nav_home_page.dart';
 import 'package:raspberrypistreamer/pages/main_page.dart';
+import 'package:raspberrypistreamer/services/user_counter_service.dart';
 
 class HomePageNotConnected extends StatefulWidget {
   const HomePageNotConnected({Key? key}) : super(key: key);
@@ -35,6 +35,7 @@ class _HomePageNotConnectedState extends State<HomePageNotConnected> {
               ElevatedButton(
                   onPressed: () {
                     connectedCheck();
+                    incrementUser();
                     Navigator.push(
                         context,
                         MaterialPageRoute(

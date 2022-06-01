@@ -8,6 +8,7 @@ import 'package:raspberrypistreamer/pages/main_page.dart';
 
 import 'package:raspberrypistreamer/services/queue_service.dart';
 import 'package:raspberrypistreamer/services/current_song_service.dart';
+import 'package:raspberrypistreamer/services/user_counter_service.dart';
 
 class HomePageConnected extends StatefulWidget {
   const HomePageConnected({Key? key}) : super(key: key);
@@ -29,6 +30,7 @@ class _HomePageConnectedState extends State<HomePageConnected> {
             ElevatedButton(
                 onPressed: () {
                   connectedCheck();
+                  decrementUser();
                   Navigator.push(
                       context,
                       MaterialPageRoute(
